@@ -20,7 +20,7 @@ app.use(express.static(faviconPath, {
     maxAge: 1000 * 60 * 60 * 24 * 7
 }));
 
-app.get('/favicon', function (req, res) {
+app.get('/', function (req, res) {
     var url = req.query.url;
     var options = {
         root: faviconPath,
