@@ -16,10 +16,6 @@ function downloadFile(uri, filename, callback) {
     }
 }
 
-// app.use(express.static(faviconPath, {
-//     maxAge: 1000 * 60 * 60 * 24 * 7
-// }));
-
 app.get('/', function (req, res) {
     var url = req.query.url;
     var options = {
@@ -37,11 +33,12 @@ app.get('/', function (req, res) {
     //console.log(url, fileName);
 
     downloadFile("http://www.google.com/s2/favicons?domain=" + url, path.join(faviconPath, fileName), function () {
+        res.setHeader("Cache-Control", "public,max-age=2592000"); // 缓存一个月
         res.sendFile(fileName, options, function (err) {
             if (err) {
                 res.status(err.status).end();
             } else {
-                res.setHeader("Cache-Control", "public,max-age=2592000")
+
                 res.status(200).end();
             }
         });
