@@ -36,7 +36,7 @@ app.get('/', function (req, res) {
 
     //console.log(url, fileName);
 
-    downloadFile("http://www.google.com/s2/favicons?domain=" + url, faviconPath + fileName, function () {
+    downloadFile("http://www.google.com/s2/favicons?domain=" + url, path.join(faviconPath, fileName), function () {
         res.sendFile(fileName, options, function (err) {
             if (err) {
                 res.status(err.status).end();
