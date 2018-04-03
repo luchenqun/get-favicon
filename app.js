@@ -16,9 +16,9 @@ function downloadFile(uri, filename, callback) {
     }
 }
 
-app.use(express.static(faviconPath, {
-    maxAge: 1000 * 60 * 60 * 24 * 7
-}));
+// app.use(express.static(faviconPath, {
+//     maxAge: 1000 * 60 * 60 * 24 * 7
+// }));
 
 app.get('/', function (req, res) {
     var url = req.query.url;
@@ -41,6 +41,7 @@ app.get('/', function (req, res) {
             if (err) {
                 res.status(err.status).end();
             } else {
+                res.setHeader("Cache-Control", "public,max-age=2592000")
                 res.status(200).end();
             }
         });
