@@ -5,5 +5,5 @@
 
 由于我自己在我的[书签系统](http://mybookmark.cn)需要用到网站的favicon，但是国内我也没找到好的获取favicon接口，要么就是不稳定，时不时挂了，要么就是很多favicon获取不到，比如这个[byi](https://api.byi.pw/favicon)很多国外的网站都获取不到。   
 
-由于GFW的原因，使用Google提供的接口`http://www.google.com/s2/favicons?domain=`无法访问，所以，我自己使用[express](http://www.expressjs.com.cn/)模块写了一个简单的模块通过Google的API获取favicon。使用接口很简单：`http://45.32.69.126:3000/?url=你要获取的url地址`，比如`http://45.32.69.126:3000/?url=https://www.google.com.hk/`。如果你要在你的网站上使用，也可以这样`<img src="http://45.32.69.126:3000/?url=https://www.baidu.com/">
+由于GFW的原因，使用Google提供的接口`http://www.google.com/s2/favicons?domain=`无法访问，所以，我自己使用[express](http://www.expressjs.com.cn/)模块写了一个简单的模块通过Google的API获取favicon。使用接口很简单：`http://45.32.69.126:3000/?url=你要获取的url地址`，比如`http://45.32.69.126:3000/?url=https://www.google.com.hk/`。如果你要在你的网站上使用，也可以这样`<img src="http://45.32.69.126:3000/?url=https://www.baidu.com/">`
 
