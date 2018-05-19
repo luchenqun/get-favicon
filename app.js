@@ -9,10 +9,14 @@ const faviconPath = path.join(__dirname, 'favicon');
 
 function downloadFile(uri, filename, callback) {
     if (fs.existsSync(filename)) {
-        callback();
+        callback(null);
     } else {
         var stream = fs.createWriteStream(filename);
-        request(uri).pipe(stream).on('close', callback);
+        request(uri, { timeout: 3000 })
+            .on('error', function (err) {
+                stream.close();
+            })
+            .pipe(stream).on('close', callback);
     }
 }
 
@@ -31,15 +35,18 @@ app.get('/', function (req, res) {
     fileName = (urlObj.hostname || "default") + ".ico";
 
     //console.log(url, fileName);
+    var google = "http://www.google.com/s2/favicons?domain=";
+    var statvoo = "https://api.statvoo.com/favicon/?url="
 
-    downloadFile("http://www.google.com/s2/favicons?domain=" + url, path.join(faviconPath, fileName), function () {
+    downloadFile(google + url, path.join(faviconPath, fileName), function (err) {
+        if (err) {
+            fs.unlink(path.join(faviconPath, fileName), function (err) {
+            });
+            fileName = "default.ico";
+        }
         res.setHeader("Cache-Control", "public,max-age=2592000"); // 缓存一个月
         res.sendFile(fileName, options, function (err) {
-            if (err) {
-                res.status(err.status).end();
-            } else {
-                res.status(200).end();
-            }
+            res.status(200).end();
         });
     });
 });
