@@ -12,11 +12,17 @@ function downloadFile(uri, filename, callback) {
         callback(null);
     } else {
         var stream = fs.createWriteStream(filename);
-        request(uri, { timeout: 3000 })
+        var error = null;
+        request(uri, {
+                timeout: 3000
+            })
             .on('error', function (err) {
                 stream.close();
+                error = err;
             })
-            .pipe(stream).on('close', callback);
+            .pipe(stream).on('close', function () {
+                callback(error);
+            });
     }
 }
 
@@ -34,14 +40,14 @@ app.get('/', function (req, res) {
     var urlObj = Url.parse(url);
     fileName = (urlObj.hostname || "default") + ".ico";
 
-    //console.log(url, fileName);
+    // console.log(url, fileName);
     var google = "http://www.google.com/s2/favicons?domain=";
     var statvoo = "https://api.statvoo.com/favicon/?url="
 
     downloadFile(google + url, path.join(faviconPath, fileName), function (err) {
+        console.log("err", err);
         if (err) {
-            fs.unlink(path.join(faviconPath, fileName), function (err) {
-            });
+            fs.unlink(path.join(faviconPath, fileName), function (err) {});
             fileName = "default.ico";
         }
         res.setHeader("Cache-Control", "public,max-age=2592000"); // 缓存一个月
