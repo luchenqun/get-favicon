@@ -8,9 +8,14 @@ var path = require('path');
 const faviconPath = path.join(__dirname, 'favicon');
 
 function downloadFile(uri, filename, callback) {
-    if (fs.existsSync(filename)) {
-        callback(null);
-    } else {
+    try {
+        let stats = fs.statSync(filename);
+        if(stats.size > 0) {
+            callback(null);
+        } else {
+            callback(new Error("empty ico file"));
+        }
+    } catch (error) {
         var stream = fs.createWriteStream(filename);
         var error = null;
         request(uri, {
