@@ -10,7 +10,8 @@ const faviconPath = path.join(__dirname, 'favicon');
 function downloadFile(uri, filename, callback) {
     try {
         let stats = fs.statSync(filename);
-        if(stats.size > 0) {
+        // size 为 492 的是 Google 获取失败的默认favicon, 不喜欢，还是用我自己默认的
+        if(stats.size > 0 && stats.size !== 492) {
             callback(null);
         } else {
             callback(new Error("empty ico file"));
@@ -47,12 +48,11 @@ app.get('/', function (req, res) {
 
     // console.log(url, fileName);
     var google = "http://www.google.com/s2/favicons?domain=";
-    var statvoo = "https://api.statvoo.com/favicon/?url="
 
     downloadFile(google + url, path.join(faviconPath, fileName), function (err) {
         console.log("err", err);
         if (err) {
-            fs.unlink(path.join(faviconPath, fileName), function (err) {});
+            fs.unlink(path.join(faviconPath, fileName), function () {});
             fileName = "default.ico";
         }
         res.setHeader("Cache-Control", "public,max-age=2592000"); // 缓存一个月
