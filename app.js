@@ -27,7 +27,11 @@ function downloadFile(uri, filename, callback) {
                 error = err;
             })
             .pipe(stream).on('close', function () {
-                callback(error);
+                if(stream && stream.bytesWritten === 492) {
+                    callback(new Error("google defalut ico file"));
+                } else {
+                    callback(error);
+                }
             });
     }
 }
