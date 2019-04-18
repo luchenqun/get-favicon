@@ -57,7 +57,7 @@ app.get('/', function (req, res) {
         console.log("err", err);
         if (err) {
             fs.unlink(path.join(faviconPath, fileName), function () {});
-            fileName = path.join(faviconPath, "..", "default.ico");
+            fileName = "default.ico";
         }
         res.setHeader("Cache-Control", "public,max-age=2592000"); // 缓存一个月
         res.sendFile(fileName, options, function (err) {
