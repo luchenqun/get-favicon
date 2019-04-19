@@ -1,74 +1,70 @@
-var express = require('express');
-var app = express();
-var request = require('request');
-var fs = require('fs');
-var Url = require('url');
-var path = require('path');
+let express = require("express");
+let app = express();
+let request = require("request");
+let fs = require("fs");
+let Url = require("url");
+let path = require("path");
 
-const faviconPath = path.join(__dirname, 'favicon');
+const faviconPath = path.join(__dirname, "favicon");
 
 function downloadFile(uri, filename, callback) {
-    try {
-        let stats = fs.statSync(filename);
-        // size 为 492 的是 Google 获取失败的默认favicon, 不喜欢，还是用我自己默认的
-        if(stats.size > 0 && stats.size !== 492) {
-            callback(null);
-        } else {
-            callback(new Error("empty ico file"));
-        }
-    } catch (error) {
-        var stream = fs.createWriteStream(filename);
-        var error = null;
-        request(uri, {
-                timeout: 3000
-            })
-            .on('error', function (err) {
-                stream.close();
-                error = err;
-            })
-            .pipe(stream).on('close', function () {
-                if(stream && stream.bytesWritten === 492) {
-                    callback(new Error("google defalut ico file"));
-                } else {
-                    callback(error);
-                }
-            });
+  try {
+    let stats = fs.statSync(filename);
+    // size 为 492 的是 Google 获取失败的默认favicon, 不喜欢，还是用我自己默认的
+    if (stats.size > 0 && stats.size !== 492) {
+      callback(null);
+    } else {
+      callback(new Error("empty ico file"));
     }
+  } catch (error) {
+    let stream = fs.createWriteStream(filename);
+    let error = null;
+    request(uri, {
+      timeout: 3000
+    })
+      .on("error", function(err) {
+        stream.close();
+        error = err;
+      })
+      .pipe(stream)
+      .on("close", function() {
+        if (stream && stream.bytesWritten === 492) {
+          callback(new Error("google defalut ico file"));
+        } else {
+          callback(error);
+        }
+      });
+  }
 }
 
-app.get('/', function (req, res) {
-    var url = req.query.url;
-    var options = {
-        root: faviconPath,
-        dotfiles: 'deny',
-        headers: {
-            'x-timestamp': Date.now(),
-            'x-sent': true
-        }
-    };
+app.get("/", function(req, res) {
+  let url = req.query.url;
+  let options = {
+    root: faviconPath,
+    dotfiles: "deny",
+    headers: {
+      "x-timestamp": Date.now(),
+      "x-sent": true
+    }
+  };
 
-    var urlObj = Url.parse(url);
-    fileName = (urlObj.hostname || "default") + ".ico";
+  let urlObj = Url.parse(url);
+  let fileName = (urlObj.hostname || "default") + ".ico";
 
-    // console.log(url, fileName);
-    var google = "http://www.google.com/s2/favicons?domain=";
+  // console.log(url, fileName);
+  let google = "http://www.google.com/s2/favicons?domain=";
 
-    downloadFile(google + url, path.join(faviconPath, fileName), function (err) {
-        console.log("err", err);
-        if (err) {
-            fs.unlink(path.join(faviconPath, fileName), function () {});
-            fileName = "default.ico";
-        }
-        res.setHeader("Cache-Control", "public,max-age=2592000"); // 缓存一个月
-        res.sendFile(fileName, options, function (err) {
-            res.status(200).end();
-        });
+  downloadFile(google + url, path.join(faviconPath, fileName), function(err) {
+    console.log("err", err);
+    if (err) {
+      fs.unlink(path.join(faviconPath, fileName), function() {});
+      fileName = "default.ico";
+    }
+    res.setHeader("Cache-Control", "public,max-age=2592000"); // 缓存一个月
+    res.sendFile(fileName, options, function(err) {
+      res.status(200).end();
     });
+  });
 });
 
-var server = app.listen(3000, function () {
-    var host = server.address().address;
-    var port = server.address().port;
-
-    console.log('App favicon get listening at http://%s:%s', host, port);
-});
+app.listen(3000, function() {});
