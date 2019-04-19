@@ -43,7 +43,7 @@ app.all('*', function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     res.header('Access-Control-Allow-Methods', '*');
-    res.header('Content-Type', 'application/json;charset=utf-8');
+    res.header('Content-Type', 'image/x-icon');
     next();
 });
 
@@ -71,6 +71,7 @@ app.get("/", function (req, res) {
             fileName = "default.ico";
         }
         res.setHeader("Cache-Control", "public,max-age=2592000"); // 缓存一个月
+        console.log("sendFile:", fileName);
         res.sendFile(fileName, options, function (err) {
             let status = 200;
             if (err) {
