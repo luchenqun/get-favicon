@@ -11,7 +11,8 @@ function downloadFile(uri, filename, callback) {
     try {
         let stats = fs.statSync(filename);
         // size 为 492 的是 Google 获取失败的默认favicon, 不喜欢，还是用我自己默认的
-        if (stats.size > 0 && stats.size !== 492) {
+        // size 为 1555 的是网站已经失效的
+        if (stats.size > 0 && stats.size !== 492 && stats.size !== 1555) {
             callback(null);
         } else {
             callback(new Error("empty ico file"));
