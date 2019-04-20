@@ -15,7 +15,7 @@ function downloadFile(uri, filename, callback) {
         if (stats.size > 0 && stats.size !== 492 && stats.size !== 1555) {
             callback(null);
         } else {
-            callback(new Error("empty ico file"));
+            callback(new Error("empty ico file， file size = " + stats.size));
         }
     } catch (err) {
         let stream = fs.createWriteStream(filename);
@@ -29,8 +29,8 @@ function downloadFile(uri, filename, callback) {
             })
             .pipe(stream)
             .on("close", function () {
-                if (stream && stream.bytesWritten === 492 && stats.size === 1555) {
-                    callback(new Error("google defalut ico or 404 file"));
+                if (stream && stream.bytesWritten === 492 && stream.size === 1555) {
+                    callback(new Error("google defalut ico or 404 file, file size = " + stream.size));
                 } else {
                     callback(error);
                 }
@@ -73,7 +73,7 @@ app.get("/", function (req, res) {
                 status = err2.status || 404;
             }
             res.status(status).end();
-            console.log(url, fileName, err1 && err1.toString(), err2 && err2.toString());
+            console.log(url, fileName, " | ", err1 && err1.toString(), " | ", err2 && err2.toString());
         });
     });
 });
