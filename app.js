@@ -74,7 +74,7 @@ app.get("/", function (req, res) {
             }
             res.status(status).end();
             if (fileName === "default.ico") {
-                console.log(url, fileName, " | ", err1 && err1.toString(), " | ", err2 && err2.toString());
+                console.log(url, " | ", err1 && err1.toString(), " | ", err2 && err2.toString());
             }
         });
     });
