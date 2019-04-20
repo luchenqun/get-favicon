@@ -61,8 +61,6 @@ app.get("/", function (req, res) {
 
     let urlObj = Url.parse(url);
     let fileName = (urlObj.hostname || "default") + ".ico";
-
-    console.log(url, fileName);
     let google = "http://www.google.com/s2/favicons?domain=";
     downloadFile(google + url, path.join(faviconPath, fileName), function (err1) {
         if (err1) {
@@ -75,7 +73,7 @@ app.get("/", function (req, res) {
                 status = err2.status || 404;
             }
             res.status(status).end();
-            console.log(urlObj, fileName, err1 && err1.toString(), err2 && err2.toString());
+            console.log(url, fileName, err1 && err1.toString(), err2 && err2.toString());
         });
     });
 });
