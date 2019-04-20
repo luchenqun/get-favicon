@@ -44,7 +44,7 @@ app.all("*", function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "Content-Type");
     res.header("Access-Control-Allow-Methods", "*");
     res.header("Content-Type", "image/x-icon");
-    res.header("Cache-Control", "public,max-age=2592000"); // 缓存一个月
+    res.header("Cache-Control", "public,max-age=604800"); // 缓存一周
     next();
 });
 
@@ -73,7 +73,9 @@ app.get("/", function (req, res) {
                 status = err2.status || 404;
             }
             res.status(status).end();
-            console.log(url, fileName, " | ", err1 && err1.toString(), " | ", err2 && err2.toString());
+            if (fileName === "default.ico") {
+                console.log(url, fileName, " | ", err1 && err1.toString(), " | ", err2 && err2.toString());
+            }
         });
     });
 });
