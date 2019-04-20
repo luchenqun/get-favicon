@@ -29,7 +29,7 @@ function downloadFile(uri, filename, callback) {
             })
             .pipe(stream)
             .on("close", function () {
-                if (stream && stream.bytesWritten === 492 && stream.size === 1555) {
+                if (stream && stream.bytesWritten === 492 && stream.bytesWritten === 1555) {
                     callback(new Error("google defalut ico or 404 file, file size = " + stream.size));
                 } else {
                     callback(error);
