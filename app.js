@@ -39,11 +39,12 @@ function downloadFile(uri, filename, callback) {
 }
 
 //设置允许跨域访问该服务.
-app.all('*', function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    res.header('Access-Control-Allow-Methods', '*');
-    res.header('Content-Type', 'image/x-icon');
+app.all("*", function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    res.header("Access-Control-Allow-Methods", "*");
+    res.header("Content-Type", "image/x-icon");
+    res.header("Cache-Control", "public,max-age=2592000"); // 缓存一个月
     next();
 });
 
@@ -63,22 +64,18 @@ app.get("/", function (req, res) {
 
     console.log(url, fileName);
     let google = "http://www.google.com/s2/favicons?domain=";
-
-    downloadFile(google + url, path.join(faviconPath, fileName), function (err) {
-        console.log("err", err);
-        if (err) {
+    downloadFile(google + url, path.join(faviconPath, fileName), function (err1) {
+        if (err1) {
             fs.unlink(path.join(faviconPath, fileName), function () { });
             fileName = "default.ico";
         }
-        res.setHeader("Cache-Control", "public,max-age=2592000"); // 缓存一个月
-        console.log("sendFile:", fileName);
-        res.sendFile(fileName, options, function (err) {
+        res.sendFile(fileName, options, function (err2) {
             let status = 200;
-            if (err) {
-                console.log("sendFile err", err);
-                status = err.status || 404
+            if (err2) {
+                status = err2.status || 404;
             }
             res.status(status).end();
+            console.log(urlObj, fileName, err1 && err1.toString(), err2 && err2.toString());
         });
     });
 });
