@@ -29,8 +29,8 @@ function downloadFile(uri, filename, callback) {
             })
             .pipe(stream)
             .on("close", function () {
-                if (stream && stream.bytesWritten === 492) {
-                    callback(new Error("google defalut ico file"));
+                if (stream && stream.bytesWritten === 492 && stats.size === 1555) {
+                    callback(new Error("google defalut ico or 404 file"));
                 } else {
                     callback(error);
                 }
