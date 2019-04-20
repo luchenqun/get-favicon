@@ -21,7 +21,7 @@ function downloadFile(uri, filename, callback) {
         let stream = fs.createWriteStream(filename);
         let error = null;
         request(uri, {
-            timeout: 100
+            timeout: 500
         })
             .on("error", function (err) {
                 stream.close();
