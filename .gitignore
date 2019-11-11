@@ -58,5 +58,5 @@ typings/
 .env
 
 package-lock.json
-favicon/*
+# favicon/*
 !favicon/default.ico
