@@ -12,39 +12,38 @@ function downloadFile(uri, filename, callback) {
         let stats = fs.statSync(filename);
         // size 为 492 的是 Google 获取失败的默认favicon, 不喜欢，还是用我自己默认的
         // size 为 1555 的是网站已经失效的
-        if (stats.size > 0 && stats.size !== 492 && stats.size !== 1555) {
+        if (stats.size > 0 && stats.size !== 492 && stats.size !== 1555 && stats.size !== 984) {
             callback(null);
         } else {
-            callback(new Error("empty ico file， file size = " + stats.size));
+            callback(new Error("empty ico file"));
         }
     } catch (err) {
         let stream = fs.createWriteStream(filename);
         let error = null;
         request(uri, {
-            timeout: 500
+            timeout: 3000
         })
-            .on("error", function (err) {
-                stream.close();
-                error = err;
-            })
-            .pipe(stream)
-            .on("close", function () {
-                if (stream && (stream.bytesWritten === 492 || stream.bytesWritten === 1555)) {
-                    callback(new Error("google defalut ico or 404 file, file size = " + stream.bytesWritten));
-                } else {
-                    callback(error);
-                }
-            });
+        .on("error", function (err) {
+            stream.close();
+            error = err;
+        })
+        .pipe(stream)
+        .on("close", function () {
+            if (stream && (stream.bytesWritten === 492 || stream.bytesWritten === 984)) {
+                callback(new Error("google defalut ico file"));
+            } else {
+                callback(error);
+            }
+        });
     }
 }
 
 //设置允许跨域访问该服务.
-app.all("*", function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Content-Type");
-    res.header("Access-Control-Allow-Methods", "*");
-    res.header("Content-Type", "image/x-icon");
-    res.header("Cache-Control", "public,max-age=604800"); // 缓存一周
+app.all('*', function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Methods', '*');
+    res.header('Content-Type', 'image/x-icon');
     next();
 });
 
@@ -61,21 +60,23 @@ app.get("/", function (req, res) {
 
     let urlObj = Url.parse(url);
     let fileName = (urlObj.hostname || "default") + ".ico";
-    let google = "http://www.google.com/s2/favicons?domain=";
-    downloadFile(google + url, path.join(faviconPath, fileName), function (err1) {
-        if (err1) {
+
+    // let google = "http://www.google.com/s2/favicons?domain=";
+    let uomg = "https://api.uomg.com/api/get.favicon?url=";
+
+    downloadFile(uomg + url, path.join(faviconPath, fileName), function (err) {
+        if (err) {
+            console.log("err", url, fileName, err.toString());
             fs.unlink(path.join(faviconPath, fileName), function () { });
             fileName = "default.ico";
         }
-        res.sendFile(fileName, options, function (err2) {
+        res.setHeader("Cache-Control", "public,max-age=2592000"); // 缓存一个月
+        res.sendFile(fileName, options, function (err) {
             let status = 200;
-            if (err2) {
-                status = err2.status || 404;
+            if (err) {
+                status = err.status || 404
             }
             res.status(status).end();
-            if (fileName === "default.ico") {
-                console.log(url, " | ", err1 && err1.toString(), " | ", err2 && err2.toString());
-            }
         });
     });
 });
