@@ -49,6 +49,7 @@ app.all('*', function (req, res, next) {
 
 app.get("/", function (req, res) {
     let url = req.query.url;
+    let reset = req.query.reset;
     let options = {
         root: faviconPath,
         dotfiles: "deny",
@@ -60,11 +61,19 @@ app.get("/", function (req, res) {
 
     let urlObj = Url.parse(url);
     let fileName = (urlObj.hostname || "default") + ".ico";
+    let filePath = path.join(faviconPath, fileName);
 
     // let google = "http://www.google.com/s2/favicons?domain=";
     let uomg = "https://api.uomg.com/api/get.favicon?url=";
+    
+    if(reset) {
+        try {
+          fs.unlinkSync(filePath);
+        } catch (err) {
+        }
+    }
 
-    downloadFile(uomg + url, path.join(faviconPath, fileName), function (err) {
+    downloadFile(uomg + url, filePath, function (err) {
         if (err) {
             console.log("err", url, fileName, err.toString());
             fs.unlink(path.join(faviconPath, fileName), function () { });
