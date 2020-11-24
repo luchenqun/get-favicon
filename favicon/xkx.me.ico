@@ -1,0 +1,11 @@
+--2018-07-09 20:43:58--  http://mmm.lezi.tk/images/logo.png
+Resolving mmm.lezi.tk (mmm.lezi.tk)... 107.174.39.244
+Connecting to mmm.lezi.tk (mmm.lezi.tk)|107.174.39.244|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 5714 (5.6K) [image/png]
+Saving to: ‘logo.png’
+
+     0K .....                                                 100% 46.8M=0s
+
+2018-07-09 20:43:59 (46.8 MB/s) - ‘logo.png’ saved [5714/5714]
+
