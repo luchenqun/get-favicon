@@ -4,6 +4,7 @@ let request = require("request");
 let fs = require("fs");
 let Url = require("url");
 let path = require("path");
+let superagent = require("superagent");
 
 const faviconPath = path.join(__dirname, "favicon");
 
@@ -23,18 +24,18 @@ function downloadFile(uri, filename, callback) {
         request(uri, {
             timeout: 3000
         })
-        .on("error", function (err) {
-            stream.close();
-            error = err;
-        })
-        .pipe(stream)
-        .on("close", function () {
-            if (stream && (stream.bytesWritten === 492 || stream.bytesWritten === 984)) {
-                callback(new Error("google defalut ico file"));
-            } else {
-                callback(error);
-            }
-        });
+            .on("error", function (err) {
+                stream.close();
+                error = err;
+            })
+            .pipe(stream)
+            .on("close", function () {
+                if (stream && (stream.bytesWritten === 492 || stream.bytesWritten === 984)) {
+                    callback(new Error("google defalut ico file"));
+                } else {
+                    callback(error);
+                }
+            });
     }
 }
 
@@ -65,10 +66,10 @@ app.get("/", function (req, res) {
 
     // let google = "http://www.google.com/s2/favicons?domain=";
     let uomg = "https://api.uomg.com/api/get.favicon?url=";
-    
-    if(reset) {
+
+    if (reset) {
         try {
-          fs.unlinkSync(filePath);
+            fs.unlinkSync(filePath);
         } catch (err) {
         }
     }
@@ -89,5 +90,22 @@ app.get("/", function (req, res) {
         });
     });
 });
+
+app.get("/qpic", function (req, res) {
+    res.writeHead(200, { 'Content-Type': 'image/png' });
+    let url = req.query.url;
+    if (!url) {
+        res.send("");
+    } else {
+        superagent.get(url)
+            .set('Referer', '')
+            .set("User-Agent", 'User-Agent:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36 Core/1.47.933.400 QQBrowser/9.4.8699.400')
+            .end(function (err, result) {
+                if (err) { res.send(""); }
+                res.end(result.body);
+            });
+    }
+});
+
 
 app.listen(3000, function () { });
