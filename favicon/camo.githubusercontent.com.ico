@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>https://api.uomg.com/api/get.favicon?url=https://camo.githubusercontent.com/2a0004426e793a3ddac7dc68150bd2da0f0b24e902363526e538cb7e4a92b671/68747470733a2f2f622e6c7563712e66756e2f696d616765732f73637265656e73686f742e676966</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>vm_0_5_centos</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2022/01/06 22:28:48</td>
+</tr>
+</table>
+<hr/>Powered by Tengine<hr><center>tengine</center>
+</body>
+</html>
