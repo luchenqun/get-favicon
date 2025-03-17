@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>404页面 - 一键解析</title>
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="/static/css/404.css">
+		<link rel="shortcut icon" href="http://www.yijianjiexi.com/favicon.ico">
+</head>
+	<body rlt="1" style="">
+		<div class="container">
+			<img class="bg" src="/static/img/404.png">
+			<div class="btn">
+				<a href="/" class="goindex">返回首页</a>
+				<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=892710916&amp;site=qq&amp;menu=yes" target="_blank" class="lx">咨询站长</a>
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+	
+</body></html>

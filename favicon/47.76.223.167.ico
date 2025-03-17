@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="zh"><!-- This web page is copied by the "https://bazhan.wang" --><head><meta charset="utf-8">
+
+<title>Kelecloud</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="解鎖網路限制，世界觸手可及。服務器部署於世界各地，為用戶提供高品質的網路體驗。使用負載均衡技術搭配高QoS和SLA保證的服務器以及人工智能腳本來保證服務器和流媒體解鎖的穩定性。專注為用戶提供最好的服務品質。">
+<meta name="keywords" content="可樂雲,kelecloud,可樂雲Kelecloud">
+<meta content="Kelecloud" name="author">
+<script src="js/xrMKoRMOIhv6GSN9TOcKG6M5OFI.js"></script><link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.5.0/css/all.css">
+<link href="https://kelecloud.xyz/images/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://kelecloud.xyz/images/css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="https://kelecloud.xyz/images/css/owl.theme.css">
+<link rel="stylesheet" type="text/css" href="https://kelecloud.xyz/images/css/owl.transitions.css">
+<link rel="stylesheet" type="text/css" href="https://kelecloud.xyz/css/magnific-popup.css">
+<link href="https://kelecloud.xyz/images/css/style.css" rel="stylesheet" type="text/css">
+<link href="https://kelecloud.xyz/images/css/custom.css" rel="stylesheet" type="text/css">
+</head>
+<body data-spy="scroll" data-target="#navbarCollapse">
+<nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
+<div class="container">
+<a class="navbar-brand logo text-uppercase" href="index.html">
+<img src="https://kelecloud.xyz/images/img/logo-dark.png" alt="" height="22">
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+<i class="fa fa-bars"></i>
+</button>
+<div class="collapse navbar-collapse" id="navbarCollapse">
+<ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
+<li class="nav-item">
+<a href="#pricing" class="nav-link smoothlink">價格</a>
+</li>
+</ul>
+<ul class="navbar-nav navbar-center">
+<li class="nav-item">
+<a href="https://panel.keleofficial.com/#/login" class="nav-link">登入(主用网址)</a>
+</li>
+<li class="nav-item">
+<a href="https://my.kele123.net/#/login" class="nav-link">登入(备用网址)</a>
+</li>
+<li class="nav-item">
+<a href="https://panel.kelecloud.xyz/#/login" class="nav-link">登入(备用网址)</a>
+</li>
+<li class="nav-item d-inline-block d-lg-none">
+<a href="https://panel.keleofficial.com/#/login" class="nav-link">註冊</a>
+</li>
+</ul>
+<div class="navbar-button d-none d-lg-inline-block">
+<a href="https://panel.keleofficial.com/#/register" class="btn btn-sm btn-soft-primary btn-round">註冊</a>
+</div>
+</div>
+</div>
+</nav>
+<section class="bg-home" id="home">
+<div class="home-center">
+<div class="home-desc-center">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<div class="home-content">
+<h1 class="home-title">數據中繼傳輸</h1>
+<p class="text-muted mt-3 f-20">解鎖網路限制，世界觸手可及。服務器部署於世界各地，為用戶提供高品質的網路體驗。使用負載均衡技術搭配高QoS和SLA保證的服務器以及人工智能腳本來保證服務器和流媒體解鎖的穩定性。專注為用戶提供最好的服務品質。
+ </p>
+<div class="mt-5">
+<a href="https://panel.keleofficial.com/#/login" class="btn btn-primary">快速開始<i class="mdi mdi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="home-img">
+<img src="https://kelecloud.xyz/images/img/china-globe.7664fb6.png" class="img-fluid" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section pt-0">
+<div class="container">
+<div class="row mt-5">
+<div class="col-lg-3">
+<div class="client-images mt-4">
+<img src="https://kelecloud.xyz/images/img/hkbn.png" alt="logo-img" class="mx-auto img-fluid d-block">
+</div>
+</div>
+<div class="col-lg-3">
+<div class="client-images mt-4">
+<img src="https://kelecloud.xyz/images/img/hkt.png" alt="logo-img" class="mx-auto img-fluid d-block">
+</div>
+</div>
+<div class="col-lg-3 ">
+<div class="client-images mt-4">
+<img src="https://kelecloud.xyz/images/img/hgc.png" alt="logo-img" class="mx-auto img-fluid d-block">
+</div>
+</div>
+<div class="col-lg-3">
+<div class="client-images mt-4">
+<img src="https://kelecloud.xyz/images/img/icable.png" alt="logo-img" class="mx-auto img-fluid d-block">
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section bg-light" id="services">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<div class="title-box text-center">
+<h6 class="title-sub-title mb-0 text-primary f-17">服務項目</h6>
+<h3 class="title-heading mt-4">我們的服務滿足用戶多方面的需求</h3>
+</div>
+</div>
+</div>
+<div class="row align-items-center mt-5">
+<div class="col-lg-6">
+<div class="tab-content mt-4" id="v-pills-tabContent">
+<div class="tab-pane fade show active" id="v-pills-gen-ques" role="tabpanel" aria-labelledby="v-pills-gen-ques-tab">
+<div class="services-img">
+<img src="https://kelecloud.xyz/images/img/3.png" class="img-fluid" alt="">
+</div>
+</div>
+<div class="tab-pane fade" id="v-pills-privacy" role="tabpanel" aria-labelledby="v-pills-privacy-tab">
+<div class="services-img">
+<img src="1.html" class="img-fluid" alt="">
+</div>
+</div>
+<div class="tab-pane fade" id="v-pills-support" role="tabpanel" aria-labelledby="v-pills-support-tab">
+<div class="services-img">
+<img src="2.html" class="img-fluid" alt="">
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="nav flex-column nav-pills mt-4" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+<a class="nav-link active" id="v-pills-gen-ques-tab" data-toggle="pill" href="#v-pills-gen-ques" role="tab" aria-controls="v-pills-gen-ques" aria-selected="true">
+<div class="p-3">
+<div class="media">
+<div class="services-title">
+<i class="mdi mdi-wordpress"></i>
+</div>
+<div class="media-body pl-4">
+<h5 class="mb-2 services-title mt-2">
+設備平台不再是阻攔</h5>
+<p class="mb-0">任何時間任何設備無憂無慮使用我們的服務。 兼容您的台式電腦、筆電、移動設備、平板甚至是您的路由器。</p>
+</div>
+</div>
+</div>
+</a>
+<a class="nav-link" id="v-pills-privacy-tab" data-toggle="pill" href="#v-pills-privacy" role="tab" aria-controls="v-pills-privacy" aria-selected="false">
+<div class="p-3">
+<div class="media">
+<div class="services-title">
+<i class="mdi mdi-security"></i>
+</div>
+<div class="media-body pl-4">
+<h5 class="mb-2 services-title mt-2">多方網路運營商接入</h5>
+<p class="mb-0">Kelecloud已接入中國移動、中國電信、香港電訊有限公司、環球全域電訊有限公司、香港寬頻有限公司、有線寬頻
+等香港網路運營商。客戶可以在訪問App Store、Youtube、Spotify、Netflix等服務時享受高速穩定低延遲的連接。</p>
+</div>
+</div>
+</div>
+</a>
+<a class="nav-link" id="v-pills-support-tab" data-toggle="pill" href="#v-pills-support" role="tab" aria-controls="v-pills-support" aria-selected="false">
+<div class="p-3">
+<div class="media">
+<div class="services-title">
+<i class="mdi mdi-cloud-download-outline"></i>
+</div>
+<div class="media-body pl-4">
+<h5 class="mb-2 f-18 services-title mt-2">全球性網路運營商接入</h5>
+<p class="mb-0">入口提供多地區高質量機房資源。出口提供香港、日本、台灣、美國、新加坡等地區。您可以享用高質量的網路體驗。</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section bg-light pt-5">
+<div class="container">
+<div class="row" id="counter">
+<div class="col-lg-12">
+<div class="counter-info mt-4">
+<h3>我們奉上熱誠於真心</h3>
+<p class="text-muted mt-4">24小時服務器監控，多台容災服務器以備不時之需。您也可以通過官網面板發起工單與我們聯繫，也有日常流量使用記錄提供您時刻關注套餐用量。</p>
+<div class="mt-4">
+<a href="https://panel.keleofficial.com/#/login" class="btn btn-primary">登入 <i class="fa fa-user"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="pricing">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<div class="title-box text-center">
+<h6 class="title-sub-title mb-0 text-primary f-17">價格</h6>
+<h3 class="title-heading mt-4">性價比極高的套餐選擇</h3>
+ </div>
+</div>
+</div>
+<div class="row mt-5 pt-4">
+<div class="col-lg-4">
+<div class="pricing-box mt-4 rounded">
+<div class="pricing-content">
+<h4 class="text-uppercase">小戶推薦</h4>
+<hr>
+<div class="pricing-plan mt-4 text-primary text-center">
+<h1><sup class="text-muted">¥ </sup>15.88 <small class="f-16 text-muted">/ 月</small></h1>
+</div>
+<hr>
+<div class="pricing-features pt-3">
+<p class="text-muted"><strong class="text-dark">96 GB</strong> 流量</p>
+<p class="text-muted"><strong class="text-dark">不限制</strong> 帶寬</p>
+<p class="text-muted"><strong class="text-dark">不限制</strong> 客戶端數量</p>
+</div>
+<div class="pricing-border mt-3"></div>
+<div class="mt-4 pt-2 text-center">
+<a href="https://my.kelecloud.xyz/#/plan" class="btn btn-primary btn-round">現在購買</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="pricing-box border border-primary mt-4 rounded">
+<div class="pricing-content">
+<div class="pricing-lable">熱門選擇</div>
+<h4 class="text-uppercase">長期使用推薦</h4>
+<hr>
+<div class="pricing-plan mt-4 text-primary text-center">
+<h1><sup class="text-muted">¥ </sup>258.88 <small class="f-16 text-muted"><br>/ 不限時</small></h1>
+</div>
+<hr>
+<div class="pricing-features pt-3">
+<p class="text-muted"><strong class="text-dark">3072 GB</strong> 流量用完為止</p>
+<p class="text-muted"><strong class="text-dark">不限制</strong> 帶寬</p>
+<p class="text-muted"><strong class="text-dark">不限制</strong> 客戶端數量</p>
+</div>
+<div class="pricing-border mt-3"></div>
+<div class="mt-4 pt-2 text-center">
+<a href="https://my.kelecloud.xyz/#/plan" class="btn btn-primary btn-round">現在購買</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4">
+<div class="pricing-box mt-4 rounded">
+<div class="pricing-content">
+<h4 class="text-uppercase">小戶推薦</h4>
+<hr>
+<div class="pricing-plan mt-4 text-primary text-center">
+<h1><sup class="text-muted">¥ </sup>20.88 <small class="f-16 text-muted">/ 月</small></h1>
+</div>
+<hr>
+<div class="pricing-features pt-3">
+<p class="text-muted"><strong class="text-dark">192GB</strong> 流量</p>
+<p class="text-muted"><strong class="text-dark">不限制</strong> 帶寬</p>
+<p class="text-muted"><strong class="text-dark">不限制</strong> 客戶端數量</p>
+</div>
+<div class="pricing-border mt-3"></div>
+<div class="mt-4 pt-2 text-center">
+<a href="https://my.kelecloud.xyz/#/plan" class="btn btn-primary btn-round">現在購買</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-5 bg-light">
+<div class="container">
+<hr class="my-5">
+<div class="row">
+<div class="col-12">
+<div class="text-center">
+<p class="text-muted mb-0">2019-2022 © Kelecloud</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script src="https://kelecloud.xyz/images/js/jquery.min.js" type="8ed41a1eaff52679b4d14e30-text/javascript"></script>
+<script src="https://kelecloud.xyz/images/js/bootstrap.bundle.min.js" type="8ed41a1eaff52679b4d14e30-text/javascript"></script>
+<script src="https://kelecloud.xyz/images/js/jquery.easing.min.js" type="8ed41a1eaff52679b4d14e30-text/javascript"></script>
+<script src="https://kelecloud.xyz/js/jquery.mb.YTPlayer.js" type="8ed41a1eaff52679b4d14e30-text/javascript"></script>
+<script src="https://kelecloud.xyz/images/js/jquery.magnific-popup.min.js" type="8ed41a1eaff52679b4d14e30-text/javascript"></script>
+<script src="https://kelecloud.xyz/images/js/contact.init.js" type="8ed41a1eaff52679b4d14e30-text/javascript"></script>
+<script src="https://kelecloud.xyz/images/js/counter.init.js" type="8ed41a1eaff52679b4d14e30-text/javascript"></script>
+<script src="https://kelecloud.xyz/images/js/owl.carousel.min.js" type="8ed41a1eaff52679b4d14e30-text/javascript"></script>
+<script src="https://kelecloud.xyz/images/js/app.js" type="8ed41a1eaff52679b4d14e30-text/javascript"></script>
+<script src="js/rocket-loader.min.js" data-cf-settings="8ed41a1eaff52679b4d14e30-|49" defer=""></script>
+</body></html>
